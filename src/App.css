@@ -131,6 +131,11 @@ table {
   --black: #161319;
 
   --font: 'Saira Condensed', sans-serif;
+  --xtra-light-weight: 100;
+  --light-weight: 300;
+  --regular-weight: 400;
+  --semi-bold: 500;
+  --bold: 600;
 
   --padding-button: 1rem 1.7rem;
   --padding-content: 2.5rem;
