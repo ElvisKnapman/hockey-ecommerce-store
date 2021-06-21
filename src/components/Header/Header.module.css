@@ -15,6 +15,8 @@
 }
 
 .link-list {
+  display: flex;
+  align-items: center;
   list-style: none;
 }
 
@@ -24,4 +26,28 @@
   margin-left: 1.2rem;
   cursor: pointer;
   font-size: 2.3rem;
+}
+
+.nav-cart-container {
+  position: relative;
+}
+
+.shopping-cart-icon {
+  position: relative;
+  font-size: 4rem;
+}
+
+.cart-count-container {
+  width: 100%;
+  position: absolute;
+  top: 0.3rem;
+  right: -0.3rem;
+  text-align: center;
+}
+
+.cart-amount-badge {
+  color: var(--black);
+  font-size: 1.8rem;
+  font-weight: var(--bold);
+  box-shadow: rgba(0, 0, 0, 0.3);
 }
