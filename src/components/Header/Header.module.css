@@ -1,0 +1,27 @@
+.header-bar {
+  width: 100%;
+  min-height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-nav-bar);
+  background-color: var(--main-blue);
+  color: var(--white);
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.brand-title {
+  font-size: 3.5rem;
+}
+
+.link-list {
+  list-style: none;
+}
+
+.link-item {
+  display: inline-block;
+  padding: var(--padding-nav-links);
+  margin-left: 1.2rem;
+  cursor: pointer;
+  font-size: 2.3rem;
+}
