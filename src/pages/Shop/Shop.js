@@ -1,12 +1,15 @@
 import classes from './Shop.module.css';
 
+import CategoryItem from '../../components/CategoryItem/CategoryItem';
+
+import data from '../../data/dummy-data';
+
 const Shop = () => {
   return (
     <section className={classes['shop-list-container']}>
-      <div className={classes['category-item']}>Sticks</div>
-      <div className={classes['category-item']}>Helmets</div>
-      <div className={classes['category-item']}>Gloves</div>
-      <div className={classes['category-item']}>Skates</div>
+      {data.map((category) => (
+        <CategoryItem title={category.title} image={category.image} />
+      ))}
     </section>
   );
 };
