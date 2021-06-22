@@ -1,4 +1,5 @@
 .product-item {
+  min-width: 25rem;
   flex-basis: 25rem;
   padding: var(--padding-content);
   border: 1px solid var(--white);
@@ -14,8 +15,8 @@
 }
 
 .product-image {
-  width: 10rem;
-  height: 15rem;
+  max-width: 100%;
+  max-height: 15rem;
   margin: 0 auto;
   margin-bottom: 4rem;
 }
