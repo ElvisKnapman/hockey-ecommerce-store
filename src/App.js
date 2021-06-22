@@ -2,6 +2,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import './App.css';
 import Layout from './components/Layout/Layout';
+import ProductList from './pages/ProductList.js/ProductList';
 import Shop from './pages/Shop/Shop';
 
 function App() {
@@ -11,10 +12,9 @@ function App() {
         <Route path="/" exact>
           <Shop />
         </Route>
-        <Route path="/sticks" exact></Route>
-        <Route path="/skates" exact></Route>
-        <Route path="/sticks" exact></Route>
-        <Route path="/gloves" exact></Route>
+        <Route path={['/sticks', '/skates', '/helmets', '/gloves']} exact>
+          <ProductList />
+        </Route>
         <Route path="/sticks/:productId"></Route>
         <Route path="/skates/:productId"></Route>
         <Route path="/sticks/:productId"></Route>
