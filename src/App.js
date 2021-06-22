@@ -1,10 +1,11 @@
 import './App.css';
 import Layout from './components/Layout/Layout';
+import Shop from './pages/Shop/Shop';
 
 function App() {
   return (
     <Layout>
-      <h1>Site content</h1>
+      <Shop />
     </Layout>
   );
 }
