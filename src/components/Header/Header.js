@@ -13,7 +13,7 @@ const Header = () => {
               <div className={classes['nav-cart-container']}>
                 <FaShoppingCart className={classes['shopping-cart-icon']} />
                 <div className={classes['cart-count-container']}>
-                  <span className={classes['cart-amount-badge']}>10</span>
+                  <span className={classes['cart-amount-badge']}>0</span>
                 </div>
               </div>
             </li>
