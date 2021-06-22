@@ -157,3 +157,10 @@ body {
   font-weight: 300;
   font-size: 1.7rem;
 }
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: var(--black);
+}
