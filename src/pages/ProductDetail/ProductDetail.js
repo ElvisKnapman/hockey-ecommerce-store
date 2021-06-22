@@ -4,7 +4,7 @@ import useGetProduct from '../../hooks/useGetProduct';
 // get type from the url string
 const type = window.location.pathname.split('/')[1];
 
-const ProductPage = (props) => {
+const ProductDetail = (props) => {
   const params = useParams();
   let { productId: id } = params;
   // convert product id to number
@@ -28,4 +28,4 @@ const ProductPage = (props) => {
   );
 };
 
-export default ProductPage;
+export default ProductDetail;
