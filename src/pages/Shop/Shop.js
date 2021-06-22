@@ -8,7 +8,11 @@ const Shop = () => {
   return (
     <section className={classes['shop-list-container']}>
       {data.map((category) => (
-        <CategoryItem title={category.title} image={category.image} />
+        <CategoryItem
+          title={category.title}
+          image={category.image}
+          path={category.path}
+        />
       ))}
     </section>
   );
