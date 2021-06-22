@@ -1,0 +1,24 @@
+.list-container {
+  width: 75%;
+  max-width: 120rem;
+  margin: 4rem auto;
+  padding: var(--padding-content);
+  /* background-color: var(--white); */
+  border-radius: 6px;
+}
+
+.list-title {
+  font-size: 5rem;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.list-item-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  column-gap: 4rem;
+  row-gap: 3rem;
+  /* align-items: center; */
+}
