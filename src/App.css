@@ -127,7 +127,7 @@ table {
 :root {
   --main-blue: #00205b;
   --accent: #546289;
-  --white: #e8d9d8;
+  --white: #e6e6e6;
   --black: #161319;
 
   --font: 'Saira Condensed', sans-serif;
@@ -156,4 +156,11 @@ body {
   font-family: var(--font);
   font-weight: 300;
   font-size: 1.7rem;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: var(--black);
 }
