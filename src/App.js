@@ -2,7 +2,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import './App.css';
 import Layout from './components/Layout/Layout';
-import ProductList from './pages/ProductList.js/ProductList';
+import ProductList from './pages/ProductList/ProductList';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Shop from './pages/Shop/Shop';
 
