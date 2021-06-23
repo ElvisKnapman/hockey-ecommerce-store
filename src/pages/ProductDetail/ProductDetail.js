@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useCallback } from 'react';
 import ProductOptions from '../../components/ProductOptions/ProductOptions';
-import AddToCart from '../../components/AddToCart/AddToCart';
+import AddToCart from '../../components/AddToCartControls/AddToCartControls';
 import useGetProduct from '../../hooks/useGetProduct';
 
 import classes from './ProductDetail.module.css';
@@ -13,21 +13,25 @@ const ProductDetail = (props) => {
   let { productId: id } = params;
   // convert product id to number
   id = Number(id);
-  const [type, setType] = useState(
-    () => window.location.pathname.split('/')[1]
-  );
+  const [type] = useState(() => window.location.pathname.split('/')[1]);
   const [product, error] = useGetProduct(type, id);
   const [size, setSize] = useState(null);
 
-  console.log('the type', type);
-  console.log('the size state in parent product details', size);
-
+  // passing down and using in effect, memoizing to prevent triggers
   const handleSizeChange = useCallback((sizeData) => {
     setSize(sizeData);
   }, []);
 
-  const handleAddToCart = (cartData) => {
+  const handleAddToCart = (quantity) => {
     // dispatch to cart
+    const cartProduct = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      ...size,
+      quantity,
+    };
+    console.log(cartProduct);
   };
 
   // if there was an error retrieving product
@@ -59,7 +63,9 @@ const ProductDetail = (props) => {
         />
       </div>
       <div className={classes['product-options-container']}>
-        <span className={classes['product-price']}>${product.price}</span>
+        <span className={classes['product-price']}>
+          ${product.price.toLocaleString()}
+        </span>
         <ProductOptions type={type} onSizeChange={handleSizeChange} />
         <AddToCart onAddToCart={handleAddToCart} />
       </div>
