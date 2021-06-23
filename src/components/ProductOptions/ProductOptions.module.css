@@ -1,0 +1,24 @@
+.size-options-container {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.size-label-text {
+  display: inline-block;
+  margin-right: 3rem;
+}
+
+.size-options {
+  padding: 0.5rem;
+}
+
+.size-options li {
+  display: inline-block;
+  background-color: var(--main-blue);
+  min-width: 4rem;
+  border-radius: 4px;
+  color: var(--white);
+  text-align: center;
+  padding: 0.4rem 0.6rem;
+}
