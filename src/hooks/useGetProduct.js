@@ -5,7 +5,7 @@ const useGetProduct = (type, id) => {
   const products = useSelector((state) => state.items);
   const [product, setProduct] = useState(null);
   const [error, setError] = useState({
-    isError: false,
+    hasError: false,
     message: '',
   });
 
@@ -15,13 +15,15 @@ const useGetProduct = (type, id) => {
       const foundProduct = products[type].find((product) => product.id === id);
       if (foundProduct) {
         setProduct(foundProduct);
-        setError({ isError: false, message: '' });
+        setError({ hasError: false, message: '' });
       } else {
-        setError({ isError: true, message: 'No product was found.' });
+        setError({ hasError: true, message: 'No product was found.' });
       }
     };
 
-    findProduct();
+    if (type && id) {
+      findProduct();
+    }
   }, [type, id, products]);
 
   return [product, error];
