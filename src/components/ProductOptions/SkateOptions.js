@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 
 const SkateOptions = (props) => {
   const { onSizeChange } = props;
-  const [size, setSize] = useState(7);
+  const [size, setSize] = useState({ options: { size: '7' } });
   useEffect(() => {
     onSizeChange(size);
   }, [size, onSizeChange]);
   const handleSizechange = (e) => {
-    console.log(e.target.value);
+    console.log({ options: { size: e.target.value } });
     setSize(e.target.value);
   };
   return (

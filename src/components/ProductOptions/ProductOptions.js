@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import SkateOptions from './SkateOptions';
 import StickOptions from './StickOptions';
 import HelmetOptions from './HelmetOptions';
