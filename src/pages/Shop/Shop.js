@@ -7,8 +7,9 @@ import data from '../../data/dummy-data';
 const Shop = () => {
   return (
     <section className={classes['shop-list-container']}>
-      {data.map((category) => (
+      {data.map((category, index) => (
         <CategoryItem
+          key={index}
           title={category.title}
           image={category.image}
           path={category.path}
