@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import calculateCart from './helpers/cart-calculate';
+
 const initialState = {
   cart: [],
   totalPrice: 0,
@@ -35,14 +37,7 @@ const cartSlice = createSlice({
       }
 
       // update the cart total price and total quantity
-      let updatedQuantity = 0;
-
-      const updatedPrice = updatedCart.reduce((total, currItem) => {
-        // update quantity
-        updatedQuantity = updatedQuantity + currItem.quantity;
-        // update total
-        return total + currItem.price * currItem.quantity;
-      }, 0);
+      const { updatedPrice, updatedQuantity } = calculateCart(updatedCart);
 
       // return the updated state
       return {
@@ -53,7 +48,56 @@ const cartSlice = createSlice({
       };
     },
 
-    removeItem: (state, action) => {},
+    increaseQuantity: (state, action) => {
+      // add 1 to the quantity
+      const updatedCart = state.cart.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
+
+      // update the cart total price and total quantity
+      const { updatedPrice, updatedQuantity } = calculateCart(updatedCart);
+
+      // return the updated state
+      return {
+        ...state,
+        cart: updatedCart,
+        totalPrice: Number(updatedPrice.toFixed(2)),
+        totalQuantity: updatedQuantity,
+      };
+    },
+
+    decreaseQuantity: (state, action) => {
+      // find item
+      const cartItem = state.cart.find((item) => item.id === action.payload);
+
+      // if quantity is 1, a decrease will remove the item
+      let updatedCart;
+      if (cartItem.quantity === 1) {
+        updatedCart = state.cart.filter((item) => item.id !== action.payload);
+      } else {
+        // remove one from the quantity
+        updatedCart = state.cart.map((item) => {
+          if (item.id === action.payload) {
+            return { ...item, quantity: item.quantity - 1 };
+          }
+          return item;
+        });
+      }
+
+      // update the cart total price and total quantity
+      const { updatedPrice, updatedQuantity } = calculateCart(updatedCart);
+
+      // return the updated state
+      return {
+        ...state,
+        cart: updatedCart,
+        totalPrice: Number(updatedPrice.toFixed(2)),
+        totalQuantity: updatedQuantity,
+      };
+    },
 
     deleteItem: (state, aciton) => {},
 
