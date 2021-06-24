@@ -9,8 +9,11 @@ import classes from './Cart.module.css';
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart.cart);
-  console.log('the cart in the cart component', cart);
+  const cart = useSelector((state) => state.cart);
+
+  const { cart: cartItems, totalPrice } = cart;
+
+  console.log('the cart in the cart component', cartItems);
 
   // callbacks to pass down to CartItem
   const handleIncreaseQuantity = (itemId) => {
@@ -21,14 +24,26 @@ const Cart = () => {
     dispatch(cartActions.decreaseQuantity(itemId));
   };
 
-  const cartItems = cart.map((item) => (
-    <CartItem
-      key={item.id}
-      item={item}
-      onIncreaseQuantity={handleIncreaseQuantity}
-      onDecreaseQuantity={handleDecreaseQuantity}
-    />
-  ));
+  // format price
+  const formattedPrice = totalPrice.toLocaleString();
+
+  // construct the content to display in cart UI
+  const cartContent =
+    cartItems.length > 0 ? (
+      cartItems.map((item) => (
+        <CartItem
+          key={item.id}
+          item={item}
+          onIncreaseQuantity={handleIncreaseQuantity}
+          onDecreaseQuantity={handleDecreaseQuantity}
+        />
+      ))
+    ) : (
+      <p className={classes['no-items-message']}>
+        No items in your cart. Go add some!
+      </p>
+    );
+
   return (
     <div className={classes['cart-container']}>
       <div className={classes['title-close-icon']}>
@@ -39,15 +54,13 @@ const Cart = () => {
           <IoClose />
         </span>
       </div>
-      <div className={classes['cart-items']}>
-        {cart.length > 0 ? (
-          cartItems
-        ) : (
-          <p className={classes['no-items-message']}>
-            No items in your cart. Go add some!
-          </p>
-        )}
-      </div>
+      <div className={classes['cart-items']}>{cartContent}</div>
+      {totalPrice > 0 ? (
+        <div className={classes['total-price-container']}>
+          <p className={classes['total-text-label']}>Total</p>
+          <p className={classes['total-price-text']}>${formattedPrice}</p>
+        </div>
+      ) : null}
     </div>
   );
 };
