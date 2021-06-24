@@ -18,8 +18,8 @@ const AddToCart = (props) => {
   };
 
   const handleAddToCart = () => {
-    console.log('the quantity', quantity);
     onAddToCart(quantity);
+    setQuantity(1);
   };
   return (
     <React.Fragment>
