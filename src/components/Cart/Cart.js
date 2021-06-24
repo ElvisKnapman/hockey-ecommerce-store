@@ -7,15 +7,19 @@ import CartItem from './CartItem/CartItem';
 
 import classes from './Cart.module.css';
 
-const Cart = (props) => {
+const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
   console.log('the cart in the cart component', cart);
 
   // callbacks to pass down to CartItem
-  const handleIncreaseQuantity = () => {};
+  const handleIncreaseQuantity = (itemId) => {
+    dispatch(cartActions.increaseQuantity(itemId));
+  };
 
-  const handleDecreaseQuantity = () => {};
+  const handleDecreaseQuantity = (itemId) => {
+    dispatch(cartActions.decreaseQuantity(itemId));
+  };
 
   const cartItems = cart.map((item) => (
     <CartItem

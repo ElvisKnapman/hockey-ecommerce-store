@@ -2,9 +2,17 @@ import classes from './CartItem.module.css';
 
 const CartItem = (props) => {
   const { onIncreaseQuantity, onDecreaseQuantity, item } = props;
-  const { name, price, quantity } = item;
+  const { id, name, price, quantity } = item;
   // format price
   const formattedPrice = price.toLocaleString();
+
+  const handleIncreaseQuantity = () => {
+    onIncreaseQuantity(id);
+  };
+
+  const handleDecreaseQuantity = () => {
+    onDecreaseQuantity(id);
+  };
   return (
     <div className={classes['cart-item']}>
       <div className={classes['item-name-controls']}>
@@ -16,14 +24,14 @@ const CartItem = (props) => {
           <button
             type="button"
             className={classes['btn']}
-            onClick={onDecreaseQuantity}>
+            onClick={handleDecreaseQuantity}>
             -
           </button>
           <span className={classes['quantity-text']}>{quantity}</span>
           <button
             type="button"
             className={classes['btn']}
-            onClick={onIncreaseQuantity}>
+            onClick={handleIncreaseQuantity}>
             +
           </button>
         </div>
