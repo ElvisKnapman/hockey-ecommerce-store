@@ -1,14 +1,18 @@
 import { useParams } from 'react-router-dom';
 import { useState, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import ProductOptions from '../../components/ProductOptions/ProductOptions';
 import AddToCart from '../../components/AddToCartControls/AddToCartControls';
 import useGetProduct from '../../hooks/useGetProduct';
+
+import { cartActions } from '../../store/reducers/cart-slice';
 
 import classes from './ProductDetail.module.css';
 
 // get type from the url string
 
 const ProductDetail = (props) => {
+  const dispatch = useDispatch();
   const params = useParams();
   let { productId: id } = params;
   // convert product id to number
@@ -23,7 +27,7 @@ const ProductDetail = (props) => {
   }, []);
 
   const handleAddToCart = (quantity) => {
-    // dispatch to cart
+    // construct object to add to cart state
     const cartProduct = {
       id: product.id,
       name: product.name,
@@ -31,7 +35,9 @@ const ProductDetail = (props) => {
       ...size,
       quantity,
     };
-    console.log(cartProduct);
+
+    // dispatch to the cart
+    dispatch(cartActions.addItem(cartProduct));
   };
 
   // if there was an error retrieving product
