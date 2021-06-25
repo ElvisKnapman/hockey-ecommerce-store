@@ -11,7 +11,7 @@ const Header = () => {
   const cartQuantity = useSelector((state) => state.cart.totalQuantity);
   return (
     <header className={classes['header-bar']}>
-      <span className={classes['brand-title']}>Brand Title</span>
+      <span className={classes['brand-title']}>Elvis' Hockey Shop</span>
       <nav className={classes['nav-elements']}>
         <ul className={classes['link-list']}>
           <Link to="/">

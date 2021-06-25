@@ -1,6 +1,7 @@
 .product-item {
-  min-width: 25rem;
+  max-width: 25rem;
   flex-basis: 25rem;
+  flex-grow: 1;
   padding: var(--padding-content);
   border: 1px solid var(--white);
   border-radius: 6px;
@@ -16,7 +17,7 @@
 
 .product-image {
   max-width: 100%;
-  max-height: 15rem;
+  max-height: 100%;
   margin: 0 auto;
   margin-bottom: 4rem;
 }
@@ -54,4 +55,10 @@
   background-color: transparent;
   color: var(--main-blue);
   border-color: var(--main-blue);
+}
+
+@media (max-width: 660px) {
+  .product-item {
+    max-width: 35rem;
+  }
 }
