@@ -30,3 +30,13 @@
   font-size: 4rem;
   border-bottom: 1px solid var(--white);
 }
+
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+  }
+
+  .product-title {
+    text-align: center;
+  }
+}
