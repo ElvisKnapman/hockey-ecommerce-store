@@ -51,3 +51,9 @@
   font-weight: var(--bold);
   box-shadow: rgba(0, 0, 0, 0.3);
 }
+
+a,
+a:active,
+a:visited {
+  color: #fff;
+}
