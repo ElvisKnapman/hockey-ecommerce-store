@@ -4,16 +4,19 @@ import { cartActions } from '../../store/reducers/cart-slice';
 
 import classes from './Header.module.css';
 import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const dispatch = useDispatch();
   const cartQuantity = useSelector((state) => state.cart.totalQuantity);
   return (
     <header className={classes['header-bar']}>
-      <span className={classes['brand-title']}>Brand Title</span>
+      <span className={classes['brand-title']}>Elvis' Hockey Shop</span>
       <nav className={classes['nav-elements']}>
         <ul className={classes['link-list']}>
-          <li className={classes['link-item']}>Shop</li>
+          <Link to="/">
+            <li className={classes['link-item']}>Shop</li>
+          </Link>
           <span className="cart">
             <li className={classes['link-item']}>
               <div

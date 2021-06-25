@@ -2,4 +2,5 @@
   max-width: 150rem;
   margin: 4rem auto;
   padding: var(--padding-content);
+  padding-top: 10rem;
 }

@@ -1,9 +1,7 @@
 .list-container {
-  width: 75%;
   max-width: 120rem;
   margin: 4rem auto;
   padding: var(--padding-content);
-  /* background-color: var(--white); */
   border-radius: 6px;
 }
 
@@ -15,10 +13,10 @@
 }
 
 .list-item-container {
+  margin: 0 auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   column-gap: 4rem;
   row-gap: 3rem;
-  /* align-items: center; */
 }

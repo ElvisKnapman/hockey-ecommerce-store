@@ -1,6 +1,8 @@
 .header-bar {
+  position: fixed;
+  top: 0;
   width: 100%;
-  min-height: 10rem;
+  min-height: 8.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,7 +13,7 @@
 }
 
 .brand-title {
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 
 .link-list {
@@ -50,4 +52,37 @@
   font-size: 1.8rem;
   font-weight: var(--bold);
   box-shadow: rgba(0, 0, 0, 0.3);
+}
+
+a,
+a:active,
+a:visited {
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  .header-bar {
+    padding: 0 2rem;
+  }
+
+  .brand-title,
+  .link-item {
+    font-size: 2.2rem;
+  }
+
+  .shopping-cart-icon {
+    font-size: 3.4rem;
+  }
+
+  .cart-count-container {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: -0.3rem;
+    text-align: center;
+  }
+
+  .cart-amount-badge {
+    font-size: 1.5rem;
+  }
 }
