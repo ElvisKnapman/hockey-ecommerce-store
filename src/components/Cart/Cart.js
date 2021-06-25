@@ -56,10 +56,17 @@ const Cart = () => {
       </div>
       <div className={classes['cart-items']}>{cartContent}</div>
       {totalPrice > 0 ? (
-        <div className={classes['total-price-container']}>
-          <p className={classes['total-text-label']}>Total</p>
-          <p className={classes['total-price-text']}>${formattedPrice}</p>
-        </div>
+        <>
+          <div className={classes['total-price-container']}>
+            <p className={classes['total-text-label']}>Total</p>
+            <p className={classes['total-price-text']}>${formattedPrice}</p>
+          </div>
+          <button
+            type="button"
+            className={`${classes.btn} ${classes['btn-checkout']}`}>
+            Checkout
+          </button>
+        </>
       ) : null}
     </div>
   );
