@@ -13,8 +13,6 @@ const Cart = () => {
 
   const { cart: cartItems, totalPrice } = cart;
 
-  console.log('the cart in the cart component', cartItems);
-
   // callbacks to pass down to CartItem
   const handleIncreaseQuantity = (itemId) => {
     dispatch(cartActions.increaseQuantity(itemId));

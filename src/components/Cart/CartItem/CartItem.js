@@ -1,3 +1,5 @@
+import { IoTrashOutline } from 'react-icons/io5';
+
 import classes from './CartItem.module.css';
 
 const CartItem = (props) => {
@@ -25,7 +27,11 @@ const CartItem = (props) => {
             type="button"
             className={classes['btn']}
             onClick={handleDecreaseQuantity}>
-            -
+            {quantity === 1 ? (
+              <IoTrashOutline className={classes['trash-icon']} />
+            ) : (
+              '-'
+            )}
           </button>
           <span className={classes['quantity-text']}>{quantity}</span>
           <button
