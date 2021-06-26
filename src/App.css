@@ -139,13 +139,14 @@ table {
 
   --padding-button: 1rem 1.7rem;
   --padding-content: 2.5rem;
-  --padding-nav-bar: 2.5rem 5rem;
-  --padding-nav-links: 0.5rem;
+  --padding-nav-bar: 0 5rem;
+  --padding-nav-links: 0 0.5rem;
 }
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  user-select: none;
 }
 
 html {

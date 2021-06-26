@@ -1,11 +1,27 @@
 .shop-list-container {
+  width: 100%;
   max-width: 100rem;
   margin: 3rem auto;
   display: grid;
+  justify-items: center;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  column-gap: 1rem;
+  column-gap: 4rem;
   row-gap: 4rem;
   align-items: center;
   justify-items: center;
+}
+
+/* adjust gaps on smaller screens */
+@media (max-width: 900px) {
+  .shop-list-container {
+    column-gap: 2rem;
+    row-gap: 2rem;
+  }
+}
+
+/* switch to 1 category tile on smaller mobile screens */
+@media (max-width: 550px) {
+  .shop-list-container {
+    grid-template-columns: 1fr;
+  }
 }
