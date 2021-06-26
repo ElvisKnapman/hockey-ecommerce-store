@@ -1,6 +1,6 @@
 .cart-container {
-  position: absolute;
-  top: 11rem;
+  position: fixed;
+  top: 9rem;
   right: 1rem;
   width: 100%;
   max-width: 32rem;
