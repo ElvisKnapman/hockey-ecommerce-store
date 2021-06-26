@@ -1,7 +1,7 @@
 .product-item {
+  position: relative;
   max-width: 25rem;
   flex-basis: 25rem;
-  flex-grow: 1;
   padding: var(--padding-content);
   border: 1px solid var(--white);
   border-radius: 6px;
@@ -13,6 +13,7 @@
 .product-info {
   display: flex;
   flex-direction: column;
+  min-height: 47rem;
 }
 
 .product-image {
@@ -25,12 +26,12 @@
 .price-text {
   font-size: 3rem;
   color: var(--main-blue);
-  margin-bottom: 2rem;
 }
 
 .product-name-text {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: var(--regular-weight);
+  margin-bottom: 2rem;
 }
 
 .btn {
@@ -55,6 +56,19 @@
   background-color: transparent;
   color: var(--main-blue);
   border-color: var(--main-blue);
+}
+
+.btn-view-item {
+  position: absolute;
+  bottom: 2rem;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+a,
+a:active,
+a:visited {
+  color: var(--black);
 }
 
 @media (max-width: 660px) {

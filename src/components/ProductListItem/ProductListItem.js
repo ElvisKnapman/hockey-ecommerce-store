@@ -6,17 +6,20 @@ const ProductListItem = (props) => {
   const { pathname } = location;
   const { id, name, price, image } = props.item;
   const formattedPrice = price.toLocaleString();
+  console.log('name in product list item', name);
   return (
-    <Link to={`${pathname}/${id}`}>
-      <div className={classes['product-item']}>
+    <div className={classes['product-item']}>
+      <Link to={`${pathname}/${id}`}>
         <div className={classes['product-info']}>
           <img className={classes['product-image']} src={image} alt="" />
-          <span className={classes['price-text']}>${formattedPrice}</span>
           <span className={classes['product-name-text']}>{name}</span>
-          <button className={classes['btn']}>View Item</button>
+          <span className={classes['price-text']}>${formattedPrice}</span>
+          <button className={`${classes['btn']} ${classes['btn-view-item']}`}>
+            View Item
+          </button>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 
