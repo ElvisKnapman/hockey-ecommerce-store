@@ -99,13 +99,17 @@ const cartSlice = createSlice({
       };
     },
 
-    deleteItem: (state, aciton) => {},
+    paymentSuccess: (state) => {
+      console.log('in the payment success reducer');
+      // reset the state on successful payment
+      return initialState;
+    },
 
-    showCart: (state, action) => {
+    showCart: (state) => {
       return { ...state, showCart: true };
     },
 
-    hideCart: (state, action) => {
+    hideCart: (state) => {
       return { ...state, showCart: false };
     },
   },

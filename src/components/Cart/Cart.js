@@ -1,9 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/reducers/cart-slice';
 
-import { IoClose } from 'react-icons/io5';
-
 import CartItem from './CartItem/CartItem';
+import StripeCheckoutButton from '../CheckoutButton/CheckoutButton';
+
+import stripeLogo from '../../images/stripe-logo-sm.png';
+import { IoClose } from 'react-icons/io5';
 
 import classes from './Cart.module.css';
 
@@ -59,11 +61,21 @@ const Cart = () => {
             <p className={classes['total-text-label']}>Total</p>
             <p className={classes['total-price-text']}>${formattedPrice}</p>
           </div>
-          <button
+          {/* <button
             type="button"
             className={`${classes.btn} ${classes['btn-checkout']}`}>
             Checkout
-          </button>
+          </button> */}
+          <div className={classes['payment-btn-logo-container']}>
+            <StripeCheckoutButton />
+            <img className={classes['stripe-logo']} src={stripeLogo} alt="" />
+          </div>
+          <p className={classes['payments-message']}>
+            *Please use the following test credit card*
+            <br />
+            <br />
+            4242 4242 4242 4242 - Exp: 01/25 - CVV: 123
+          </p>
         </>
       ) : null}
     </div>
