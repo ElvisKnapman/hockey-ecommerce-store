@@ -22,6 +22,7 @@ function App() {
     dispatch(cartActions.hideCart());
   }, [pathname, dispatch]);
 
+  console.log(location);
   return (
     <Layout>
       {showCart ? <Cart /> : null}
