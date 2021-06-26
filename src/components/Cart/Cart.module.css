@@ -79,6 +79,24 @@
   text-transform: uppercase;
 }
 
+.payment-btn-logo-container {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stripe-logo {
+  max-width: 6rem;
+}
+
+.payments-message {
+  margin-top: 2rem;
+  color: var(--main-blue);
+  text-align: center;
+}
+
 @keyframes cartAnimation {
   0% {
     /* opacity: 0; */

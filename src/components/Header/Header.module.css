@@ -55,9 +55,9 @@
   box-shadow: rgba(0, 0, 0, 0.3);
 }
 
-a,
-a:active,
-a:visited {
+.link-item a,
+.link-item a:active,
+.link-item a:visited {
   color: #fff;
 }
 
