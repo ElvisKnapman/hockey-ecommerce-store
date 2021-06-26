@@ -14,9 +14,9 @@ const Header = () => {
       <span className={classes['brand-title']}>Elvis' Hockey Shop</span>
       <nav className={classes['nav-elements']}>
         <ul className={classes['link-list']}>
-          <Link to="/">
-            <li className={classes['link-item']}>Shop</li>
-          </Link>
+          <li className={classes['link-item']}>
+            <Link to="/">Shop</Link>
+          </li>
           <span className="cart">
             <li className={classes['link-item']}>
               <div
