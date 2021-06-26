@@ -10,7 +10,6 @@ const useGetProduct = (type, id) => {
   });
 
   useEffect(() => {
-    console.log('the get product effect has run');
     const findProduct = () => {
       const foundProduct = products[type].find((product) => product.id === id);
       if (foundProduct) {
