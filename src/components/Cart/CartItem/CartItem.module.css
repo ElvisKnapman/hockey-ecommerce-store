@@ -34,13 +34,17 @@
 }
 
 .btn {
+  min-width: 3rem;
   font-size: 2rem;
   outline: none;
   border: none;
   background-color: var(--main-blue);
   border-radius: 4px;
-  padding: 0.1rem 1rem;
+  padding: 0.1rem 0.5rem;
   color: var(--white);
-  min-width: 3rem;
   cursor: pointer;
+}
+
+.trash-icon {
+  font-size: 1.5rem;
 }
