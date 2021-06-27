@@ -8,6 +8,7 @@ import ProductList from './pages/ProductList/ProductList';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Shop from './pages/Shop/Shop';
 import Cart from './components/Cart/Cart';
+import NotFound from './components/NotFound/NotFound';
 import { cartActions } from './store/reducers/cart-slice';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           ]}>
           <ProductDetail />
         </Route>
+        <Route component={NotFound} />
       </Switch>
     </Layout>
   );
