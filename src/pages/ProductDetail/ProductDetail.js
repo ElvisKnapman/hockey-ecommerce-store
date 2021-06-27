@@ -44,7 +44,7 @@ const ProductDetail = (props) => {
   if (error.hasError) {
     return (
       <div>
-        <p>{error.message}</p>
+        <h2 style={{ fontSize: '3rem' }}>{error.message}</h2>
       </div>
     );
   }
