@@ -127,7 +127,7 @@ table {
 :root {
   --main-blue: #00205b;
   --accent: #546289;
-  --white: #e8d9d8;
+  --white: #e6e6e6;
   --black: #161319;
 
   --font: 'Saira Condensed', sans-serif;
@@ -139,13 +139,14 @@ table {
 
   --padding-button: 1rem 1.7rem;
   --padding-content: 2.5rem;
-  --padding-nav-bar: 2.5rem 5rem;
-  --padding-nav-links: 0.5rem;
+  --padding-nav-bar: 0 5rem;
+  --padding-nav-links: 0 0.5rem;
 }
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  user-select: none;
 }
 
 html {
@@ -156,4 +157,11 @@ body {
   font-family: var(--font);
   font-weight: 300;
   font-size: 1.7rem;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: var(--black);
 }
