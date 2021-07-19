@@ -11,13 +11,14 @@ const Header = () => {
   const cartQuantity = useSelector((state) => state.cart.totalQuantity);
   return (
     <header className={classes['header-bar']}>
-      <span className={classes['brand-title']}>Elvis' Hockey Shop</span>
+      <span className={classes['link-item']}>
+        <Link className={classes['brand-title']} to='/'>
+          Elvis' Hockey Shop
+        </Link>
+      </span>
       <nav className={classes['nav-elements']}>
         <ul className={classes['link-list']}>
-          <li className={classes['link-item']}>
-            <Link to="/">Shop</Link>
-          </li>
-          <span className="cart">
+          <span className='cart'>
             <li className={classes['link-item']}>
               <div
                 className={classes['nav-cart-container']}
